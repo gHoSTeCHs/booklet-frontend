@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter as Router } from 'react-router';
+import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import HomePage from './pages/Home';
@@ -13,14 +13,8 @@ function App() {
 				<Routes>
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="/register" element={<RegisterPage />} />
-					<Route
-						path="/"
-						element={
-							<ProtectedRoute>
-								<HomePage />
-							</ProtectedRoute>
-						}
-					/>
+					<Route path="/" element={<Navigate to="/home" replace />} />
+					<Route path="/home" element={<HomePage />} />
 					<Route
 						path="/search"
 						element={
@@ -29,6 +23,7 @@ function App() {
 							</ProtectedRoute>
 						}
 					/>
+
 					<Route
 						path="/hotel/:id"
 						element={

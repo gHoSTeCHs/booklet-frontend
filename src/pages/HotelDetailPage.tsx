@@ -50,45 +50,10 @@ const HotelDetailPage: React.FC = () => {
 		<div className="flex flex-col min-h-screen bg-gray-100">
 			<div className="flex-1">
 				<div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-					{/* Status Bar */}
-					<div className="flex justify-between items-center p-4">
-						<div className="text-xs">9:41</div>
-						<div className="flex space-x-1">
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2">
-								<path d="M20 6L9 17l-5-5" />
-							</svg>
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2">
-								<path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
-								<line x1="2" y1="20" x2="2" y2="20" />
-							</svg>
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2">
-								<path d="M23 6v16h-6v-6h-6v6H5V6h4V2h6v4h8z" />
-							</svg>
-						</div>
-					</div>
-
 					{/* Hotel Image */}
 					<div className="relative">
 						<img
-							src="/api/placeholder/400/250"
+							src={hotel.imageUrl}
 							alt={hotel.name}
 							className="w-full h-64 object-cover"
 						/>
@@ -144,14 +109,14 @@ const HotelDetailPage: React.FC = () => {
 
 						{/* Thumbnails */}
 						<div className="absolute bottom-4 left-4 flex space-x-2">
-							{[1, 2, 3, 4].map((_, index) => (
+							{hotel.gallery?.map((imageUrl, index) => (
 								<div
 									key={index}
 									className={`w-12 h-8 bg-gray-200 rounded-md overflow-hidden border-2 ${
 										index === 0 ? 'border-white' : 'border-transparent'
 									}`}>
 									<img
-										src="/api/placeholder/48/32"
+										src={imageUrl}
 										alt={`Thumbnail ${index + 1}`}
 										className="w-full h-full object-cover"
 									/>
@@ -352,17 +317,18 @@ const HotelDetailPage: React.FC = () => {
 
 						{activeTab === 'gallery' && (
 							<div className="grid grid-cols-3 gap-2">
-								{[1, 2, 3, 4, 5, 6].map((_, index) => (
-									<div
-										key={index}
-										className="aspect-square bg-gray-200 rounded-md overflow-hidden">
-										<img
-											src="/api/placeholder/120/120"
-											alt={`Gallery ${index + 1}`}
-											className="w-full h-full object-cover"
-										/>
-									</div>
-								))}
+								{hotel.gallery &&
+									hotel.gallery.map((image, index) => (
+										<div
+											key={index}
+											className="aspect-square bg-gray-200 rounded-md">
+											<img
+												src={image}
+												alt={`Gallery ${index + 1}`}
+												className="w-full h-full object-cover"
+											/>
+										</div>
+									))}
 							</div>
 						)}
 
