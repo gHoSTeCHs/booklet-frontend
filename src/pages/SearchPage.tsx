@@ -41,7 +41,7 @@ const SearchPage: React.FC = () => {
 				<div className="bg-gray-100 rounded-lg overflow-hidden shadow-sm">
 					<div className="relative">
 						<img
-							src="/api/placeholder/200/150"
+							src={hotel.imageUrl}
 							alt={hotel.name}
 							className="w-full h-24 object-cover"
 						/>

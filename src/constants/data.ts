@@ -1,4 +1,5 @@
 import { Hotel } from '../..';
+import images from './images';
 
 export const hotels: Hotel[] = [
 	{
@@ -8,7 +9,7 @@ export const hotels: Hotel[] = [
 		price: 650,
 		discount: 10,
 		rating: 4.5,
-		imageUrl: '/hotel1.jpg',
+		imageUrl: images.hotel1,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		amenities: {
@@ -16,7 +17,7 @@ export const hotels: Hotel[] = [
 			baths: 1,
 			sqft: 1200,
 		},
-		gallery: ['/hotel1-1.jpg', '/hotel1-2.jpg', '/hotel1-3.jpg'],
+		gallery: [images.hotel1, images.hotel2, images.hotel3],
 	},
 	{
 		id: '2',
@@ -25,7 +26,7 @@ export const hotels: Hotel[] = [
 		price: 550,
 		discount: 10,
 		rating: 4.5,
-		imageUrl: '/hotel2.jpg',
+		imageUrl: images.hotel4,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		amenities: {
@@ -33,7 +34,7 @@ export const hotels: Hotel[] = [
 			baths: 1,
 			sqft: 1100,
 		},
-		gallery: ['/hotel2-1.jpg', '/hotel2-2.jpg', '/hotel2-3.jpg'],
+		gallery: [images.hotel4, images.hotel5, images.hotel6],
 	},
 	{
 		id: '3',
@@ -44,7 +45,7 @@ export const hotels: Hotel[] = [
 		discount: 20,
 		rating: 4.5,
 		reviewCount: 365,
-		imageUrl: '/hotel3.jpg',
+		imageUrl: images.hotel7,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		amenities: {
@@ -52,13 +53,7 @@ export const hotels: Hotel[] = [
 			baths: 1,
 			sqft: 1848,
 		},
-		gallery: [
-			'/hotel3-1.jpg',
-			'/hotel3-2.jpg',
-			'/hotel3-3.jpg',
-			'/hotel3-4.jpg',
-			'/hotel3-5.jpg',
-		],
+		gallery: [images.hotel7, images.hotel8, images.hotel9, images.hotel10],
 	},
 	{
 		id: '4',
@@ -66,7 +61,7 @@ export const hotels: Hotel[] = [
 		location: 'New York, USA',
 		price: 150,
 		rating: 4.9,
-		imageUrl: '/hotel4.jpg',
+		imageUrl: images.hotel11,
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		amenities: {
@@ -74,6 +69,6 @@ export const hotels: Hotel[] = [
 			baths: 1,
 			sqft: 800,
 		},
-		gallery: ['/hotel4-1.jpg', '/hotel4-2.jpg'],
+		gallery: [images.hotel11, images.hotel12, images.hotel13],
 	},
 ];
